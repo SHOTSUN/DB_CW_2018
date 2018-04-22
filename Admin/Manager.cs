@@ -66,8 +66,19 @@ namespace Admin
                result = exception.Message;
             }
 
-
+            connection.Close();
             return result;
+        }
+
+
+        public static DataSet readFromTable(string tableName, string commandText)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandText, connection);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, tableName);
+            connection.Close();
+            return dataset;
         }
 
     }

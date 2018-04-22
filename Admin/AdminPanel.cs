@@ -162,5 +162,114 @@ namespace Admin
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DataSet dataset = Manager.readFromTable("Airline", "SELECT name FROM Airline");
+            foreach (DataRow row in dataset.Tables["Airline"].Rows)
+            {
+                comboBox1.Items.Add(row["name"].ToString());
+            }
+            comboBox1.SelectedIndex = 0;
+
+            dataset = Manager.readFromTable("Airport", "SELECT * FROM Airport");
+            foreach (DataRow row in dataset.Tables["Airport"].Rows)
+            {
+                comboBox2.Items.Add(String.Format("{0} ({1}, {2})", row["name"].ToString(),
+                    row["city"].ToString(), row["country"].ToString()));
+                comboBox3.Items.Add(String.Format("{0} ({1}, {2})", row["name"].ToString(),
+                    row["city"].ToString(), row["country"].ToString()));
+            }
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
+
+            textBox8.Text = dateTimePicker2.Value.ToString();
+
+            MessageBox.Show(Convert.ToDecimal("20,0").ToString());
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            string connectionString = @"Server=VLAD-PC\SQLEXPRESS;Database=AIRPORT;Trusted_Connection=True;";
+            SqlConnection con = new SqlConnection(connectionString);
+            command.Connection = con;
+            con.Open();
+
+            command = new SqlCommand("createFlight", con);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@airline", SqlDbType.VarChar, 50));
+            command.Parameters["@airline"].Value = comboBox1.SelectedItem.ToString();
+
+            command.Parameters.Add(new SqlParameter("@departure_time", SqlDbType.DateTime));
+            command.Parameters["@departure_time"].Value = dateTimePicker1.Value;
+
+            command.Parameters.Add(new SqlParameter("@arrival_time", SqlDbType.DateTime));
+            command.Parameters["@arrival_time"].Value = dateTimePicker2.Value;
+
+            command.Parameters.Add(new SqlParameter("@departure", SqlDbType.VarChar, 50));
+            command.Parameters["@departure"].Value = comboBox2.SelectedItem.ToString();
+
+            command.Parameters.Add(new SqlParameter("@arrival", SqlDbType.VarChar, 50));
+            command.Parameters["@arrival"].Value = comboBox3.SelectedItem.ToString();
+
+            command.Parameters.Add(new SqlParameter("@cost", SqlDbType.Decimal, 4));
+            command.Parameters["@cost"].Value = Convert.ToDecimal(textBox8.Text);
+
+
+
+
+            command.ExecuteNonQuery();
+
+
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
