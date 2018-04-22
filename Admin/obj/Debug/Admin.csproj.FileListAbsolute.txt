@@ -1,0 +1,11 @@
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\Admin.exe.config
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\Admin.exe
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\Admin.pdb
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.Form1.resources
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.Properties.Resources.resources
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.RegisterAdmin.resources
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.csproj.GenerateResource.Cache
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.exe
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.pdb
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.AdminPanel.resources

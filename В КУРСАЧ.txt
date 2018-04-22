@@ -1,0 +1,5 @@
+янгдюмхе смхйюкэмшу онкеи
+
+ALTER TABLE Admin
+ADD CONSTRAINT uniq_password UNIQUE (password)
+
