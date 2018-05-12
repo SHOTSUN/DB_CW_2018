@@ -56,8 +56,18 @@ namespace Admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            sellersBindingSource.EndEdit();
-            tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            try { 
+                sellersBindingSource.EndEdit();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+                MessageBox.Show("Изменения произведены успешно.");
+            }
+            catch (Exception ee)
+            {
+                string[] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            }
 
         }
     }

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.airlineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aIRPORTDataSet = new Admin.AIRPORTDataSet();
             this.airportBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,14 +52,17 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flightDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idairlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.departuredateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departuretimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivaldateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivaltimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddepartureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idarrivalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.airlineBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
@@ -62,7 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flightDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // airlineBindingSource
@@ -207,89 +216,130 @@
             this.panel2.Size = new System.Drawing.Size(447, 49);
             this.panel2.TabIndex = 6;
             // 
-            // flightDataGridView
+            // flightBindingSource2
             // 
-            this.flightDataGridView.AutoGenerateColumns = false;
-            this.flightDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.flightDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.flightDataGridView.DataSource = this.flightBindingSource;
-            this.flightDataGridView.Location = new System.Drawing.Point(12, 20);
-            this.flightDataGridView.Name = "flightDataGridView";
-            this.flightDataGridView.RowHeadersVisible = false;
-            this.flightDataGridView.Size = new System.Drawing.Size(753, 161);
-            this.flightDataGridView.TabIndex = 6;
+            this.flightBindingSource2.DataMember = "Flight";
+            this.flightBindingSource2.DataSource = this.aIRPORTDataSet;
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridView1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.idairlineDataGridViewTextBoxColumn,
+            this.departuredateDataGridViewTextBoxColumn,
+            this.departuretimeDataGridViewTextBoxColumn,
+            this.arrivaldateDataGridViewTextBoxColumn,
+            this.arrivaltimeDataGridViewTextBoxColumn,
+            this.iddepartureDataGridViewTextBoxColumn,
+            this.idarrivalDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.flightBindingSource;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(942, 150);
+            this.dataGridView1.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn2
+            // idDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_airline";
-            this.dataGridViewTextBoxColumn2.DataSource = this.airlineBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_airline";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "id";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // dataGridViewTextBoxColumn3
+            // idairlineDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "departure_time";
-            this.dataGridViewTextBoxColumn3.HeaderText = "departure_time";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.idairlineDataGridViewTextBoxColumn.DataPropertyName = "id_airline";
+            this.idairlineDataGridViewTextBoxColumn.DataSource = this.airlineBindingSource;
+            this.idairlineDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.idairlineDataGridViewTextBoxColumn.HeaderText = "Авиакомпания";
+            this.idairlineDataGridViewTextBoxColumn.Name = "idairlineDataGridViewTextBoxColumn";
+            this.idairlineDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idairlineDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idairlineDataGridViewTextBoxColumn.ValueMember = "id";
             // 
-            // dataGridViewTextBoxColumn4
+            // departuredateDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "arrival_time";
-            this.dataGridViewTextBoxColumn4.HeaderText = "arrival_time";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.departuredateDataGridViewTextBoxColumn.DataPropertyName = "departure_date";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = "01.01.2000";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.departuredateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.departuredateDataGridViewTextBoxColumn.HeaderText = "Дата отправления";
+            this.departuredateDataGridViewTextBoxColumn.Name = "departuredateDataGridViewTextBoxColumn";
+            this.departuredateDataGridViewTextBoxColumn.ToolTipText = "01.01.2000";
             // 
-            // dataGridViewTextBoxColumn5
+            // departuretimeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "id_departure";
-            this.dataGridViewTextBoxColumn5.DataSource = this.airportBindingSource;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn5.HeaderText = "id_departure";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "id";
+            this.departuretimeDataGridViewTextBoxColumn.DataPropertyName = "departure_time";
+            dataGridViewCellStyle2.Format = "T";
+            dataGridViewCellStyle2.NullValue = "00:00:00";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.departuretimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.departuretimeDataGridViewTextBoxColumn.HeaderText = "Время отправления";
+            this.departuretimeDataGridViewTextBoxColumn.Name = "departuretimeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // arrivaldateDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_arrival";
-            this.dataGridViewTextBoxColumn6.DataSource = this.airportBindingSource;
-            this.dataGridViewTextBoxColumn6.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn6.HeaderText = "id_arrival";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn6.ValueMember = "id";
+            this.arrivaldateDataGridViewTextBoxColumn.DataPropertyName = "arrival_date";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "01.01.2000";
+            this.arrivaldateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.arrivaldateDataGridViewTextBoxColumn.HeaderText = "Дата прибытия";
+            this.arrivaldateDataGridViewTextBoxColumn.Name = "arrivaldateDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // arrivaltimeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn7.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.arrivaltimeDataGridViewTextBoxColumn.DataPropertyName = "arrival_time";
+            dataGridViewCellStyle4.Format = "T";
+            dataGridViewCellStyle4.NullValue = "00:00:00";
+            this.arrivaltimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.arrivaltimeDataGridViewTextBoxColumn.HeaderText = "Время прибытия";
+            this.arrivaltimeDataGridViewTextBoxColumn.Name = "arrivaltimeDataGridViewTextBoxColumn";
+            // 
+            // iddepartureDataGridViewTextBoxColumn
+            // 
+            this.iddepartureDataGridViewTextBoxColumn.DataPropertyName = "id_departure";
+            this.iddepartureDataGridViewTextBoxColumn.DataSource = this.airportBindingSource;
+            this.iddepartureDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.iddepartureDataGridViewTextBoxColumn.HeaderText = "Из";
+            this.iddepartureDataGridViewTextBoxColumn.Name = "iddepartureDataGridViewTextBoxColumn";
+            this.iddepartureDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iddepartureDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iddepartureDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // idarrivalDataGridViewTextBoxColumn
+            // 
+            this.idarrivalDataGridViewTextBoxColumn.DataPropertyName = "id_arrival";
+            this.idarrivalDataGridViewTextBoxColumn.DataSource = this.airportBindingSource;
+            this.idarrivalDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.idarrivalDataGridViewTextBoxColumn.HeaderText = "В";
+            this.idarrivalDataGridViewTextBoxColumn.Name = "idarrivalDataGridViewTextBoxColumn";
+            this.idarrivalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idarrivalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idarrivalDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.costDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             // 
             // FlightTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 318);
-            this.Controls.Add(this.flightDataGridView);
+            this.ClientSize = new System.Drawing.Size(981, 318);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FlightTable";
@@ -302,7 +352,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.flightDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,13 +377,16 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView flightDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource flightBindingSource2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idairlineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departuredateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departuretimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivaldateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivaltimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn iddepartureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idarrivalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
     }
 }

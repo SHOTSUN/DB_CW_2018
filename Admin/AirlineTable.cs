@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,13 +52,30 @@ namespace Admin
 
         private void button6_Click(object sender, EventArgs e)
         {
-            airlineBindingSource.RemoveCurrent();
+           airlineBindingSource.RemoveCurrent();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            airlineBindingSource.EndEdit();
-            tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            try { 
+                airlineBindingSource.EndEdit();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+                MessageBox.Show("Изменения произведены успешно.");
+            }
+            catch(Exception ee)
+            {
+                string [] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

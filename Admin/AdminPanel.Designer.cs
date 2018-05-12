@@ -524,29 +524,29 @@
             // sellerToolStripMenuItem
             // 
             this.sellerToolStripMenuItem.Name = "sellerToolStripMenuItem";
-            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.sellerToolStripMenuItem.Text = "SELLERS";
+            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.sellerToolStripMenuItem.Text = "ПРОДАВЦЫ";
             this.sellerToolStripMenuItem.Click += new System.EventHandler(this.sellerToolStripMenuItem_Click);
             // 
             // aIRPORTToolStripMenuItem
             // 
             this.aIRPORTToolStripMenuItem.Name = "aIRPORTToolStripMenuItem";
-            this.aIRPORTToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.aIRPORTToolStripMenuItem.Text = "AIRPORT";
+            this.aIRPORTToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.aIRPORTToolStripMenuItem.Text = "АЭРОПОРТЫ";
             this.aIRPORTToolStripMenuItem.Click += new System.EventHandler(this.aIRPORTToolStripMenuItem_Click);
             // 
             // aIRLINEToolStripMenuItem
             // 
             this.aIRLINEToolStripMenuItem.Name = "aIRLINEToolStripMenuItem";
-            this.aIRLINEToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.aIRLINEToolStripMenuItem.Text = "AIRLINE";
+            this.aIRLINEToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.aIRLINEToolStripMenuItem.Text = "АВИАКОМПАНИИ";
             this.aIRLINEToolStripMenuItem.Click += new System.EventHandler(this.aIRLINEToolStripMenuItem_Click);
             // 
             // cLIENTToolStripMenuItem
             // 
             this.cLIENTToolStripMenuItem.Name = "cLIENTToolStripMenuItem";
-            this.cLIENTToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.cLIENTToolStripMenuItem.Text = "CLIENT";
+            this.cLIENTToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.cLIENTToolStripMenuItem.Text = "КЛИЕНТЫ";
             this.cLIENTToolStripMenuItem.Click += new System.EventHandler(this.cLIENTToolStripMenuItem_Click);
             // 
             // fLIGHTToolStripMenuItem

@@ -36,8 +36,18 @@ namespace Admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            airportBindingSource.EndEdit();
-            tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            try {
+                airportBindingSource.EndEdit();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+                MessageBox.Show("Изменения произведены успешно.");
+            }
+            catch (Exception ee)
+            {
+                string[] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +68,24 @@ namespace Admin
         private void button4_Click(object sender, EventArgs e)
         {
             airportBindingSource.MoveNext();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.airportTableAdapter.Fill(this.aIRPORTDataSet.Airport);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

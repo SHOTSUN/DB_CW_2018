@@ -14,3 +14,4 @@ D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.AirlineTable.resources
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.ClientTable.resources
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.FlightTable.resources
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.TicketTable.resources
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
