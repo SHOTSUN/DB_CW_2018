@@ -20,7 +20,7 @@ namespace Admin
         private void button1_Click(object sender, EventArgs e)
         {
             RegisterAdmin adminForm = new RegisterAdmin();
-            adminForm.Show();
+            adminForm.ShowDialog();
         }
     }
 }

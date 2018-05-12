@@ -13,12 +13,14 @@ namespace Admin
 {
     public partial class AdminPanel : Form
     {
+        Form dialog;
         public AdminPanel()
         {
             InitializeComponent();
             panel1.Enabled = false;
             panel2.Enabled = false;
             panel3.Enabled = false;
+            panel4.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -180,6 +182,8 @@ namespace Admin
 
         private void button7_Click(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
             DataSet dataset = Manager.readFromTable("Airline", "SELECT name FROM Airline");
             foreach (DataRow row in dataset.Tables["Airline"].Rows)
             {
@@ -197,10 +201,9 @@ namespace Admin
             }
             comboBox2.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
+            panel4.Enabled = true;
+            
 
-            textBox8.Text = dateTimePicker2.Value.ToString();
-
-            MessageBox.Show(Convert.ToDecimal("20,0").ToString());
 
         }
 
@@ -252,13 +255,10 @@ namespace Admin
 
             command.Parameters.Add(new SqlParameter("@cost", SqlDbType.Decimal, 4));
             command.Parameters["@cost"].Value = Convert.ToDecimal(textBox8.Text);
-
-
-
-
+            
             command.ExecuteNonQuery();
-
-
+            panel4.Enabled = false;
+            MessageBox.Show("Created Succesfully");
 
         }
 
@@ -270,6 +270,71 @@ namespace Admin
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sellerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new SellersTable();
+                dialog.Show();              
+            }  
+        
+        }
+
+        private void aIRPORTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new AirportTable();
+                dialog.Show();
+            }
+        }
+
+        private void aIRLINEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new AirlineTable();
+                dialog.Show();
+            }
+        }
+
+        private void cLIENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new ClientTable();
+                dialog.Show();
+            }
+        }
+
+        private void fLIGHTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new FlightTable();
+                dialog.Show();
+            }
+        }
+
+        private void tICKETToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dialog == null || dialog.IsDisposed)
+            {
+                dialog = new TicketTable();
+                dialog.Show();
+            }
         }
     }
 }

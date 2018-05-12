@@ -50,26 +50,32 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sellerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aIRPORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aIRLINEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLIENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fLIGHTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,6 +84,7 @@
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,8 +92,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(351, 328);
@@ -301,6 +307,16 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(133, 28);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "add airline";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label7);
@@ -312,24 +328,6 @@
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(72, 120);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "add";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(72, 46);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -339,15 +337,23 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "airline";
             // 
-            // button6
+            // textBox7
             // 
-            this.button6.Location = new System.Drawing.Point(133, 28);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "add airline";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.textBox7.Location = new System.Drawing.Point(72, 46);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(72, 120);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "add";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel4
             // 
@@ -369,53 +375,70 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(335, 379);
             this.panel4.TabIndex = 6;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // button7
+            // label13
             // 
-            this.button7.Location = new System.Drawing.Point(412, 34);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(335, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Create Flight";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(26, 218);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Arrival airport";
             // 
-            // comboBox1
+            // comboBox3
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(29, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(29, 234);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(163, 21);
+            this.comboBox3.TabIndex = 13;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // button8
             // 
-            this.dateTimePicker1.CustomFormat = "MMMMdd,  yyyy | HH:mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(29, 89);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
+            this.button8.Location = new System.Drawing.Point(95, 306);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(132, 35);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "create";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // label8
+            // label12
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Airline";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 262);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Cost";
             // 
-            // label9
+            // textBox8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Departure time";
+            this.textBox8.Location = new System.Drawing.Point(29, 278);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(198, 20);
+            this.textBox8.TabIndex = 10;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 178);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Departure airport";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(29, 194);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(163, 21);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -436,68 +459,102 @@
             this.dateTimePicker2.TabIndex = 6;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // comboBox2
+            // label9
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(29, 194);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(163, 21);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Departure time";
             // 
-            // label11
+            // label8
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 178);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Departure airport";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Airline";
             // 
-            // textBox8
+            // dateTimePicker1
             // 
-            this.textBox8.Location = new System.Drawing.Point(29, 278);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(198, 20);
-            this.textBox8.TabIndex = 10;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.dateTimePicker1.CustomFormat = "MMMMdd,  yyyy | HH:mm";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(29, 89);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(236, 20);
+            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
             // 
-            // label12
+            // comboBox1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 262);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Cost";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(29, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button8
+            // button7
             // 
-            this.button8.Location = new System.Drawing.Point(95, 306);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(132, 35);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "create";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button7.Location = new System.Drawing.Point(412, 34);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(335, 23);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Create Flight";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label13
+            // menuStrip1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 218);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Arrival airport";
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sellerToolStripMenuItem,
+            this.aIRPORTToolStripMenuItem,
+            this.aIRLINEToolStripMenuItem,
+            this.cLIENTToolStripMenuItem,
+            this.fLIGHTToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(782, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // comboBox3
+            // sellerToolStripMenuItem
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(29, 234);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(163, 21);
-            this.comboBox3.TabIndex = 13;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.sellerToolStripMenuItem.Name = "sellerToolStripMenuItem";
+            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.sellerToolStripMenuItem.Text = "SELLERS";
+            this.sellerToolStripMenuItem.Click += new System.EventHandler(this.sellerToolStripMenuItem_Click);
+            // 
+            // aIRPORTToolStripMenuItem
+            // 
+            this.aIRPORTToolStripMenuItem.Name = "aIRPORTToolStripMenuItem";
+            this.aIRPORTToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.aIRPORTToolStripMenuItem.Text = "AIRPORT";
+            this.aIRPORTToolStripMenuItem.Click += new System.EventHandler(this.aIRPORTToolStripMenuItem_Click);
+            // 
+            // aIRLINEToolStripMenuItem
+            // 
+            this.aIRLINEToolStripMenuItem.Name = "aIRLINEToolStripMenuItem";
+            this.aIRLINEToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.aIRLINEToolStripMenuItem.Text = "AIRLINE";
+            this.aIRLINEToolStripMenuItem.Click += new System.EventHandler(this.aIRLINEToolStripMenuItem_Click);
+            // 
+            // cLIENTToolStripMenuItem
+            // 
+            this.cLIENTToolStripMenuItem.Name = "cLIENTToolStripMenuItem";
+            this.cLIENTToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.cLIENTToolStripMenuItem.Text = "CLIENT";
+            this.cLIENTToolStripMenuItem.Click += new System.EventHandler(this.cLIENTToolStripMenuItem_Click);
+            // 
+            // fLIGHTToolStripMenuItem
+            // 
+            this.fLIGHTToolStripMenuItem.Name = "fLIGHTToolStripMenuItem";
+            this.fLIGHTToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.fLIGHTToolStripMenuItem.Text = "FLIGHT";
+            this.fLIGHTToolStripMenuItem.Click += new System.EventHandler(this.fLIGHTToolStripMenuItem_Click);
             // 
             // AdminPanel
             // 
@@ -507,8 +564,11 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -521,7 +581,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -569,5 +632,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem sellerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aIRPORTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aIRLINEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLIENTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fLIGHTToolStripMenuItem;
     }
 }

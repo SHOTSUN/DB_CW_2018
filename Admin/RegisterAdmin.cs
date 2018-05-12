@@ -41,7 +41,7 @@ namespace Admin
                 {
                     MessageBox.Show("Entered succesfully");
                     AdminPanel panel = new AdminPanel();
-                    panel.Show();
+                    panel.ShowDialog();
                 }
                 else
                 {

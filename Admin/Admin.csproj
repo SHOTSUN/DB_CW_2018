@@ -51,6 +51,35 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AirlineTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirlineTable.Designer.cs">
+      <DependentUpon>AirlineTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIRPORTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AIRPORTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AirportTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirportTable.Designer.cs">
+      <DependentUpon>AirportTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientTable.Designer.cs">
+      <DependentUpon>ClientTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlightTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlightTable.Designer.cs">
+      <DependentUpon>FlightTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,8 +95,32 @@
     <Compile Include="RegisterAdmin.Designer.cs">
       <DependentUpon>RegisterAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellersTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellersTable.Designer.cs">
+      <DependentUpon>SellersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketTable.Designer.cs">
+      <DependentUpon>TicketTable.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AirlineTable.resx">
+      <DependentUpon>AirlineTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AirportTable.resx">
+      <DependentUpon>AirportTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientTable.resx">
+      <DependentUpon>ClientTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlightTable.resx">
+      <DependentUpon>FlightTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -84,6 +137,23 @@
     <EmbeddedResource Include="RegisterAdmin.resx">
       <DependentUpon>RegisterAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SellersTable.resx">
+      <DependentUpon>SellersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketTable.resx">
+      <DependentUpon>TicketTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AIRPORTDataSet.xsc">
+      <DependentUpon>AIRPORTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AIRPORTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AIRPORTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AIRPORTDataSet.xss">
+      <DependentUpon>AIRPORTDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
