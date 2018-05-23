@@ -19,6 +19,8 @@ namespace Admin
 
         private void AirportTable_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aIRPORTDataSet.Flight". При необходимости она может быть перемещена или удалена.
+            this.flightTableAdapter.Fill(this.aIRPORTDataSet.Flight);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aIRPORTDataSet.Airport". При необходимости она может быть перемещена или удалена.
             this.airportTableAdapter.Fill(this.aIRPORTDataSet.Airport);
 

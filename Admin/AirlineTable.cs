@@ -68,8 +68,6 @@ namespace Admin
                 MessageBox.Show(str[str.Length - 2]);
                 aIRPORTDataSet.RejectChanges();
                 tableAdapterManager1.UpdateAll(aIRPORTDataSet);
-
-
             }
         }
 

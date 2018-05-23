@@ -226,9 +226,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private AIRPORTDataSet aIRPORTDataSet;
         private System.Windows.Forms.BindingSource airlineBindingSource;
-        private AIRPORTDataSetTableAdapters.AirlineTableAdapter airlineTableAdapter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
@@ -241,5 +239,7 @@
         private AIRPORTDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        public AIRPORTDataSetTableAdapters.AirlineTableAdapter airlineTableAdapter;
+        public AIRPORTDataSet aIRPORTDataSet;
     }
 }

@@ -47,11 +47,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableAdapterManager1 = new Admin.AIRPORTDataSetTableAdapters.TableAdapterManager();
+            this.flightBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flightTableAdapter = new Admin.AIRPORTDataSetTableAdapters.FlightTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -220,6 +223,15 @@
             this.tableAdapterManager1.TicketTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = Admin.AIRPORTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // flightBindingSource
+            // 
+            this.flightBindingSource.DataMember = "Flight";
+            this.flightBindingSource.DataSource = this.aIRPORTDataSet;
+            // 
+            // flightTableAdapter
+            // 
+            this.flightTableAdapter.ClearBeforeFill = true;
+            // 
             // AirportTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,5 +273,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource flightBindingSource;
+        private AIRPORTDataSetTableAdapters.FlightTableAdapter flightTableAdapter;
     }
 }
