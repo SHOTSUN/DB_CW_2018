@@ -61,6 +61,7 @@ namespace Admin
                 airlineBindingSource.EndEdit();
                 tableAdapterManager1.UpdateAll(aIRPORTDataSet);
                 MessageBox.Show("Изменения произведены успешно.");
+                this.Close();
             }
             catch(Exception ee)
             {
@@ -74,6 +75,22 @@ namespace Admin
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            airlineBindingSource.MovePrevious();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            airlineBindingSource.MoveNext();
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ошибка ввода! Повторите снова!");
+            e.ThrowException = false;
         }
     }
 }

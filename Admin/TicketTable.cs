@@ -28,6 +28,7 @@ namespace Admin
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aIRPORTDataSet.Ticket". При необходимости она может быть перемещена или удалена.
             this.ticketTableAdapter.Fill(this.aIRPORTDataSet.Ticket);
 
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace Admin
                 ticketBindingSource.EndEdit();
                 tableAdapterManager1.UpdateAll(aIRPORTDataSet);
                 MessageBox.Show("Изменения произведены успешно.");
+                this.Close();
             }
             catch (Exception ee)
             {
@@ -55,6 +57,75 @@ namespace Admin
                 aIRPORTDataSet.RejectChanges();
                 tableAdapterManager1.UpdateAll(aIRPORTDataSet);
             }
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ошибка ввода! Повторите снова!");
+            e.ThrowException = false;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.AddNew();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.RemoveCurrent();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ticketBindingSource.EndEdit();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+                MessageBox.Show("Изменения произведены успешно.");
+                this.Close();
+            }
+            catch (Exception ee)
+            {
+                string[] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.MovePrevious();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.MoveNext();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.MoveFirst();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ticketBindingSource.MoveLast();
         }
     }
 }

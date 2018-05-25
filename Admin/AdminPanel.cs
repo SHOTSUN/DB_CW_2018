@@ -109,6 +109,7 @@ namespace Admin
             FlightTable dialog = new FlightTable();
             dialog.ShowDialog();
             this.flightTableAdapter.Fill(this.aIRPORTDataSet.Flight);
+
         }
 
         private void аВИАКОМПАНИИToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,9 +195,7 @@ namespace Admin
 
         private void пРОДАВЦЫToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SellersTable dialog = new SellersTable();
-            dialog.ShowDialog();
-            this.sellersTableAdapter.Fill(this.aIRPORTDataSet.Sellers);
+            
         }
 
         private void аЭРОПОРТЫToolStripMenuItem_Click(object sender, EventArgs e)
@@ -272,8 +271,7 @@ namespace Admin
 
         private void бИЛЕТЫToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TicketTable dialog = new TicketTable();
-            dialog.ShowDialog();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -299,16 +297,93 @@ namespace Admin
             command.Parameters.Add(new SqlParameter("@id_seller", SqlDbType.Int, 4));
             command.Parameters["@id_seller"].Value = comboBox4.SelectedValue;
 
-            command.ExecuteNonQuery();
+            try { 
+                command.ExecuteNonQuery();
+                MessageBox.Show("Билет успешно оформлен!");
+            }
+            catch (Exception ee)
+            {
+                string[] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager.UpdateAll(aIRPORTDataSet);
+            }
             con.Close();
 
-            MessageBox.Show("Билет успешно оформлен!");
+            
             button3.Enabled = false;
         }
 
         private void id_sellerComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void билетыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void сМестаРаботыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void отчётToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm dialog = new ReportForm();
+            dialog.ShowDialog();
+        }
+
+        private void билетыToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            TicketTable dialog = new TicketTable();
+            dialog.ShowDialog();
+        }
+
+        private void работаСБилетамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TicketTable dialog = new TicketTable();
+            dialog.ShowDialog();
+        }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportFromWork dialog = new ReportFromWork();
+            dialog.ShowDialog();
+        }
+
+        private void работаСПродавцамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SellersTable dialog = new SellersTable();
+            dialog.ShowDialog();
+            this.sellersTableAdapter.Fill(this.aIRPORTDataSet.Sellers);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            flightBindingSource.MovePrevious();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            flightBindingSource.MoveNext();
+        }
+
+        private void flightDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ошибка ввода! Повторите снова!");
+            e.ThrowException = false;
         }
     }
 }

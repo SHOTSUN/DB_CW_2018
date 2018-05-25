@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,14 +60,21 @@ namespace Admin
 
         private void button5_Click(object sender, EventArgs e)
         {
-            flightBindingSource.AddNew();
-            ((DataRowView)flightBindingSource.Current).Row["id_airline"] = comboBox1.SelectedValue;
-            ((DataRowView)flightBindingSource.Current).Row["departure_date"] = dateTimePicker1.Value;
-            ((DataRowView)flightBindingSource.Current).Row["arrival_date"] = dateTimePicker2.Value;
-            ((DataRowView)flightBindingSource.Current).Row["id_departure"] = comboBox2.SelectedValue;
-            ((DataRowView)flightBindingSource.Current).Row["id_arrival"] = comboBox3.SelectedValue;
-            ((DataRowView)flightBindingSource.Current).Row["cost"] = textBox1.Text;
-
+            string costInStr = "0" + textBox1.Text;
+            if (textBox1.Text != null & Convert.ToInt32(costInStr)  > 0 &
+                dateTimePicker1.Value < dateTimePicker2.Value) {
+                flightBindingSource.AddNew();
+                ((DataRowView)flightBindingSource.Current).Row["id_airline"] = comboBox1.SelectedValue;
+                ((DataRowView)flightBindingSource.Current).Row["departure_date"] = dateTimePicker1.Value;
+                ((DataRowView)flightBindingSource.Current).Row["arrival_date"] = dateTimePicker2.Value;
+                ((DataRowView)flightBindingSource.Current).Row["id_departure"] = comboBox2.SelectedValue;
+                ((DataRowView)flightBindingSource.Current).Row["id_arrival"] = comboBox3.SelectedValue;
+                ((DataRowView)flightBindingSource.Current).Row["cost"] = textBox1.Text;
+            }
+            else
+            {
+                MessageBox.Show("Введите корректные данные !");
+            }
 
         }
 
@@ -77,9 +85,24 @@ namespace Admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            flightBindingSource.EndEdit();
-            tableAdapterManager1.UpdateAll(aIRPORTDataSet);
-            MessageBox.Show("Изменения произведены успешно.");
+            try { 
+                flightBindingSource.EndEdit();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+                MessageBox.Show("Изменения произведены успешно.");
+                this.Close();
+            }
+            catch (SqlException ee)
+            {
+                string[] str = ee.Message.ToString().Split('.');
+                MessageBox.Show(str[str.Length - 2]);
+                aIRPORTDataSet.RejectChanges();
+                tableAdapterManager1.UpdateAll(aIRPORTDataSet);
+            }
+            catch
+            {
+                MessageBox.Show("Повторите снова !");
+                this.Close();
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -127,6 +150,33 @@ namespace Admin
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AirlineTable dialog = new AirlineTable();
+            dialog.ShowDialog();
+            this.flightTableAdapter.Fill(this.aIRPORTDataSet.Flight);
+            this.airlineTableAdapter.Fill(this.aIRPORTDataSet.Airline);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            AirportTable dialog = new AirportTable();
+            dialog.ShowDialog();
+            this.flightTableAdapter.Fill(this.aIRPORTDataSet.Flight);
+            this.airportTableAdapter.Fill(this.aIRPORTDataSet.Airport);
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ошибка ввода! Повторите снова!");
+            e.ThrowException = false;
         }
     }
 }

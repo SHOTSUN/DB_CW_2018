@@ -100,3 +100,9 @@ D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\ru\Microsoft.VisualStudio.Dat
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\ru\Microsoft.VisualStudio.GraphModel.resources.dll
 D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.csproj.Admin.exe.config
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\Admin.exe.manifest
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\bin\Debug\Admin.application
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.exe.manifest
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.application
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.ReportForm.resources
+D:\БНТУ\COURSE #3\6 TERM\DB\CW\Admin\obj\Debug\Admin.ReportFromWork.resources
