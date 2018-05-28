@@ -25,6 +25,7 @@ namespace Admin
             this.sellersTableAdapter.Fill(this.AIRPORTDataSet.Sellers);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "AIRPORTDataSet.Admin". При необходимости она может быть перемещена или удалена.
             this.AdminTableAdapter.Fill(this.AIRPORTDataSet.Admin);
+            this.ticketTableAdapter.Fill(this.AIRPORTDataSet.Ticket);
 
             this.reportViewer1.RefreshReport();
         }

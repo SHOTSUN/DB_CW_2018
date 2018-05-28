@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AdminBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AIRPORTDataSet = new Admin.AIRPORTDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -40,6 +40,7 @@
             this.sellersTableAdapter = new Admin.AIRPORTDataSetTableAdapters.SellersTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ticketTableAdapter = new Admin.AIRPORTDataSetTableAdapters.TicketTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AdminBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AIRPORTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellersBindingSource)).BeginInit();
@@ -57,9 +58,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.AdminBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.AdminBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Admin.ReportFromWork.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 130);
             this.reportViewer1.Name = "reportViewer1";
@@ -125,6 +126,10 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Кому";
             // 
+            // ticketTableAdapter
+            // 
+            this.ticketTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportFromWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +163,6 @@
         private AIRPORTDataSetTableAdapters.SellersTableAdapter sellersTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private AIRPORTDataSetTableAdapters.TicketTableAdapter ticketTableAdapter;
     }
 }

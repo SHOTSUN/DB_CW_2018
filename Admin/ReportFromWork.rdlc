@@ -51,7 +51,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=” Данная справка подтверждает, что “ + Parameters!pFIO.Value + “ работает в компании с ” + Parameters!hired.Value + “ .”</Value>
+                    <Value>=” Данная справка подтверждает, что  “ + Parameters!pFIO.Value + “ работает в компании с ” + Parameters!hired.Value + “ .”</Value>
                     <Style>
                       <FontSize>15pt</FontSize>
                     </Style>

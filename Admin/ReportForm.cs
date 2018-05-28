@@ -19,8 +19,9 @@ namespace Admin
 
         private void ReportForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "AIRPORTDataSet.getTicketsTable1". При необходимости она может быть перемещена или удалена.
-            
+            this.clientTableAdapter.Fill(this.aIRPORTDataSet1.Client);
+            this.ticketTableAdapter.Fill(this.AIRPORTDataSet.Ticket);
+            this.reportViewer2.RefreshReport();
         }
 
         private void dateDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -30,10 +31,9 @@ namespace Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.getTicketsTable1TableAdapter.Fill(this.AIRPORTDataSet.getTicketsTable1, dateDateTimePicker.Value, dateTimePicker1.Value);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "AIRPORTDataSet.getTicketsTable". При необходимости она может быть перемещена или удалена.
+            this.getFilteredTicketsTableTableAdapter.Fill(this.AIRPORTDataSet.getFilteredTicketsTable, dateDateTimePicker.Value, dateTimePicker1.Value, Convert.ToInt32(comboBox1.SelectedValue.ToString()));
 
-            this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
     }
 }

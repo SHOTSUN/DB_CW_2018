@@ -202,14 +202,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Admin.exe" size="270256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Admin.exe" size="280496">
       <assemblyIdentity name="Admin" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EcP58VdG9/6Uvk6tYPp/HzG3YFUiYgPL3X49DpfH8TE=</dsig:DigestValue>
+        <dsig:DigestValue>LIvA2iqr4GQAt/c0GyYAGRFd5Y11hJbQ4BVc9FV0Av8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

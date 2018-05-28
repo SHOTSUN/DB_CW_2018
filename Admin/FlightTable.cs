@@ -31,6 +31,8 @@ namespace Admin
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aIRPORTDataSet.Flight". При необходимости она может быть перемещена или удалена.
             this.flightTableAdapter.Fill(this.aIRPORTDataSet.Flight);
 
+            button7.Enabled = false;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +62,7 @@ namespace Admin
 
         private void button5_Click(object sender, EventArgs e)
         {
+            
             string costInStr = "0" + textBox1.Text;
             if (textBox1.Text != null & Convert.ToInt32(costInStr)  > 0 &
                 dateTimePicker1.Value < dateTimePicker2.Value) {
@@ -70,6 +73,7 @@ namespace Admin
                 ((DataRowView)flightBindingSource.Current).Row["id_departure"] = comboBox2.SelectedValue;
                 ((DataRowView)flightBindingSource.Current).Row["id_arrival"] = comboBox3.SelectedValue;
                 ((DataRowView)flightBindingSource.Current).Row["cost"] = textBox1.Text;
+                button7.Enabled = true;
             }
             else
             {
@@ -103,6 +107,7 @@ namespace Admin
                 MessageBox.Show("Повторите снова !");
                 this.Close();
             }
+            button7.Enabled = false;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -138,13 +143,14 @@ namespace Admin
         {
 
 
-            char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!(Char.IsDigit(e.KeyChar)))
             {
-                e.Handled = true;
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
             }
-            
+
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
